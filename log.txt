@@ -1,0 +1,150 @@
+INFO:scrapy.utils.log:Scrapy 1.5.1 started (bot: Yogaga)
+INFO:scrapy.utils.log:Versions: lxml 4.2.5.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 18.7.0, Python 3.7.0 (default, Jun 28 2018, 07:39:16) - [Clang 4.0.1 (tags/RELEASE_401/final)], pyOpenSSL 18.0.0 (OpenSSL 1.0.2p  14 Aug 2018), cryptography 2.3.1, Platform Darwin-17.7.0-x86_64-i386-64bit
+INFO:scrapy.crawler:Overridden settings: {'BOT_NAME': 'Yogaga', 'NEWSPIDER_MODULE': 'Yogaga.spiders', 'RETRY_HTTP_CODES': [301, 304, 401, 403, 408, 414, 500, 502, 503, 504], 'SPIDER_MODULES': ['Yogaga.spiders']}
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'Yogaga.middlewares.ProxyMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+['Yogaga.pipelines.MongoPipeline']
+INFO:scrapy.core.engine:Spider opened
+INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6023
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (302) to <GET https://auth.nfjd.gmcc.net> from <POST http://wz.yogaga.cn/index/user/login>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (302) to <GET https://auth.nfjd.gmcc.net/dana-na/auth/url_default/welcome.cgi> from <GET https://auth.nfjd.gmcc.net>
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://auth.nfjd.gmcc.net/dana-na/auth/url_default/welcome.cgi> (referer: None)
+ERROR:scrapy.core.scraper:Spider error processing <GET https://auth.nfjd.gmcc.net/dana-na/auth/url_default/welcome.cgi> (referer: None)
+Traceback (most recent call last):
+  File "/Users/yansunshine/anaconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/yansunshine/anaconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "/Users/yansunshine/anaconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/yansunshine/anaconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/yansunshine/anaconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/yansunshine/PycharmProjects/Yogaga/Yogaga/spiders/yogaga.py", line 44, in parse
+    cookie = re.match("(PHPSESSID=(.*?));.*", header).group(1)
+AttributeError: 'NoneType' object has no attribute 'group'
+INFO:scrapy.core.engine:Closing spider (finished)
+INFO:scrapy.statscollectors:Dumping Scrapy stats:
+{'downloader/request_bytes': 856,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/request_method_count/POST': 1,
+ 'downloader/response_bytes': 5800,
+ 'downloader/response_count': 3,
+ 'downloader/response_status_count/200': 1,
+ 'downloader/response_status_count/302': 2,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 3, 25, 10, 10, 38, 267166),
+ 'log_count/DEBUG': 4,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 7,
+ 'memusage/max': 56930304,
+ 'memusage/startup': 56926208,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'spider_exceptions/AttributeError': 1,
+ 'start_time': datetime.datetime(2019, 3, 25, 10, 10, 38, 23345)}
+INFO:scrapy.core.engine:Spider closed (finished)
+INFO:scrapy.utils.log:Scrapy 1.5.1 started (bot: Yogaga)
+INFO:scrapy.utils.log:Versions: lxml 4.2.5.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 18.7.0, Python 3.7.0 (default, Jun 28 2018, 07:39:16) - [Clang 4.0.1 (tags/RELEASE_401/final)], pyOpenSSL 18.0.0 (OpenSSL 1.0.2p  14 Aug 2018), cryptography 2.3.1, Platform Darwin-17.7.0-x86_64-i386-64bit
+INFO:scrapy.crawler:Overridden settings: {'BOT_NAME': 'Yogaga', 'NEWSPIDER_MODULE': 'Yogaga.spiders', 'RETRY_HTTP_CODES': [301, 304, 401, 403, 408, 414, 500, 502, 503, 504], 'SPIDER_MODULES': ['Yogaga.spiders']}
+INFO:scrapy.middleware:Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+INFO:scrapy.middleware:Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'Yogaga.middlewares.ProxyMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO:scrapy.middleware:Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO:scrapy.middleware:Enabled item pipelines:
+['Yogaga.pipelines.MongoPipeline']
+INFO:scrapy.core.engine:Spider opened
+INFO:scrapy.extensions.logstats:Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG:scrapy.extensions.telnet:Telnet console listening on 127.0.0.1:6023
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (302) to <GET https://auth.nfjd.gmcc.net> from <POST http://wz.yogaga.cn/index/user/login>
+DEBUG:scrapy.downloadermiddlewares.redirect:Redirecting (302) to <GET https://auth.nfjd.gmcc.net/dana-na/auth/url_default/welcome.cgi> from <GET https://auth.nfjd.gmcc.net>
+DEBUG:scrapy.core.engine:Crawled (200) <GET https://auth.nfjd.gmcc.net/dana-na/auth/url_default/welcome.cgi> (referer: None)
+ERROR:scrapy.core.scraper:Spider error processing <GET https://auth.nfjd.gmcc.net/dana-na/auth/url_default/welcome.cgi> (referer: None)
+Traceback (most recent call last):
+  File "/Users/yansunshine/anaconda3/lib/python3.7/site-packages/scrapy/utils/defer.py", line 102, in iter_errback
+    yield next(it)
+  File "/Users/yansunshine/anaconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/offsite.py", line 30, in process_spider_output
+    for x in result:
+  File "/Users/yansunshine/anaconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/referer.py", line 339, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "/Users/yansunshine/anaconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/yansunshine/anaconda3/lib/python3.7/site-packages/scrapy/spidermiddlewares/depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "/Users/yansunshine/PycharmProjects/Yogaga/Yogaga/spiders/yogaga.py", line 44, in parse
+    cookie = re.match("(PHPSESSID=(.*?));.*", header).group(1)
+AttributeError: 'NoneType' object has no attribute 'group'
+INFO:scrapy.core.engine:Closing spider (finished)
+INFO:scrapy.statscollectors:Dumping Scrapy stats:
+{'downloader/request_bytes': 856,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/request_method_count/POST': 1,
+ 'downloader/response_bytes': 5800,
+ 'downloader/response_count': 3,
+ 'downloader/response_status_count/200': 1,
+ 'downloader/response_status_count/302': 2,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 3, 25, 10, 12, 51, 105337),
+ 'log_count/DEBUG': 4,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 7,
+ 'memusage/max': 57323520,
+ 'memusage/startup': 57319424,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'spider_exceptions/AttributeError': 1,
+ 'start_time': datetime.datetime(2019, 3, 25, 10, 12, 50, 873190)}
+INFO:scrapy.core.engine:Spider closed (finished)
