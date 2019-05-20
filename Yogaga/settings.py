@@ -30,7 +30,7 @@ ROBOTSTXT_OBEY = False
 #DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
 CONCURRENT_ITEMS = 200
-CONCURRENT_REQUESTS_PER_DOMAIN = 30
+CONCURRENT_REQUESTS_PER_DOMAIN = 32
 #CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
