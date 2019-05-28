@@ -36,5 +36,6 @@ class MongoPipeline(object):
         self.client.close()
 
     def process_item(self, item, spider):
-        self.db[self.collection_name].update({'url': item['url']}, dict(item), True) #update 更新已经存在的文本，第一个参数query用来检索对象
+        self.db[self.collection_name].insert(dict(item))
+        # self.db[self.collection_name].update({'url': item['url']}, dict(item), True) #update 更新已经存在的文本，第一个参数query用来检索对象
         return item
