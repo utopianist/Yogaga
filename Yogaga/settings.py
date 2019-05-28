@@ -15,6 +15,33 @@ SPIDER_MODULES = ['Yogaga.spiders']
 NEWSPIDER_MODULE = 'Yogaga.spiders'
 
 
+import logging
+import os
+from logging.handlers import RotatingFileHandler
+
+from scrapy.utils.log import configure_logging
+
+LOG_ENABLED = False
+# Disable default Scrapy log settings.
+configure_logging(install_root_handler=False)
+
+from datetime import datetime
+date_string = f'{datetime.now():%Y-%m-%d %H:%M:%S%z}'   #f 代表格式化输出
+
+# Define your logging settings.
+dir_path = os.path.dirname(os.path.realpath(__file__))
+log_file = dir_path + os.sep + 'Logs' + os.sep + '{}.log'.format(date_string)
+
+root_logger = logging.getLogger()
+root_logger.setLevel(logging.INFO)
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+rotating_file_log = RotatingFileHandler(log_file, maxBytes=10485760, backupCount=1)
+rotating_file_log.setLevel(logging.INFO)
+rotating_file_log.setFormatter(formatter)
+root_logger.addHandler(rotating_file_log)
+
+
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'Yogaga (+http://www.yourdomain.com)'
 
