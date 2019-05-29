@@ -7,6 +7,7 @@
 
 
 import pymongo
+import datetime
 
 
 class YogagaPipeline(object):
@@ -15,7 +16,8 @@ class YogagaPipeline(object):
 
 
 class MongoPipeline(object):
-    collection_name = 'YogagaUrlTest'
+    time = datetime.datetime.now().date()
+    collection_name = 'Yogaga-{}'.format(time)
 
     def __init__(self, mongo_uri, mongo_db):
         self.mongo_uri = mongo_uri
