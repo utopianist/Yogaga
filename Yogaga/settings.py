@@ -30,7 +30,7 @@ date_string = f'{datetime.now():%Y-%m-%d %H:%M:%S%z}'   #f 代表格式化输出
 
 # Define your logging settings.
 dir_path = os.path.dirname(os.path.realpath(__file__))
-log_file = dir_path + os.sep + 'Logs' + os.sep + '{}.log'.format(date_string)
+log_file = dir_path + os.sep + 'Logs' + os.sep + '{}.txt'.format(date_string)
 
 root_logger = logging.getLogger()
 root_logger.setLevel(logging.INFO)
