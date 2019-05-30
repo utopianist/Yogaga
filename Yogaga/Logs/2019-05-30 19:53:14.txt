@@ -1,0 +1,34 @@
+2019-05-30 19:53:14,375 - scrapy.utils.log - INFO - Scrapy 1.5.1 started (bot: Yogaga)
+2019-05-30 19:53:14,393 - scrapy.utils.log - INFO - Versions: lxml 4.2.5.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 18.7.0, Python 3.7.0 (default, Jun 28 2018, 07:39:16) - [Clang 4.0.1 (tags/RELEASE_401/final)], pyOpenSSL 18.0.0 (OpenSSL 1.0.2p  14 Aug 2018), cryptography 2.3.1, Platform Darwin-17.7.0-x86_64-i386-64bit
+2019-05-30 19:53:14,397 - scrapy.crawler - INFO - Overridden settings: {'BOT_NAME': 'Yogaga', 'CONCURRENT_ITEMS': 200, 'CONCURRENT_REQUESTS_PER_DOMAIN': 32, 'LOG_ENABLED': False, 'NEWSPIDER_MODULE': 'Yogaga.spiders', 'RETRY_HTTP_CODES': [301, 304, 401, 403, 408, 414, 500, 502, 503, 504], 'SPIDER_MODULES': ['Yogaga.spiders']}
+2019-05-30 19:53:14,432 - scrapy.middleware - INFO - Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2019-05-30 19:53:14,495 - scrapy.middleware - INFO - Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'Yogaga.middlewares.ProxyMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-05-30 19:53:14,501 - scrapy.middleware - INFO - Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-05-30 19:53:14,565 - scrapy.middleware - INFO - Enabled item pipelines:
+['Yogaga.pipelines.MongoPipeline']
+2019-05-30 19:53:14,565 - scrapy.core.engine - INFO - Spider opened
+2019-05-30 19:53:14,577 - scrapy.extensions.logstats - INFO - Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-05-30 19:53:23,205 - scrapy.crawler - INFO - Received SIGINT, shutting down gracefully. Send again to force 
+2019-05-30 19:53:23,212 - scrapy.core.engine - INFO - Closing spider (shutdown)
+2019-05-30 19:53:23,479 - scrapy.crawler - INFO - Received SIGINT twice, forcing unclean shutdown
