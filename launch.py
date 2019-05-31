@@ -46,8 +46,8 @@ def next_time(t):
 
 
 def perform_command(cmd, inc):
-    os.system(cmd)
     schedule.enter(inc, 0, perform_command, (cmd, inc))  #scheduler.enter(delay, priority, action, argument=(), kwargs={})
+    os.system(cmd)
 
 
 def loop():
